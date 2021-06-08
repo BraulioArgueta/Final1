@@ -5,47 +5,48 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+
     tools:context=".HomeActivity">
+    <Button
+        android:id="@+id/logOutButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Cerrar Sesion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <include
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            layout="@layout/app_bar_main"/>
 
-        <TextView
+
+        <com.google.android.material.navigation.NavigationView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Actividad"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-
-        <Button
-            android:id="@+id/logOutButton"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="Cerrar Sesion"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.948"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-<com.google.android.material.navigation.NavigationView
-    android:id="@+id/navView"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    app:headerLayout="@layout/nav_header"
-    app:menu="@menu/nav_drawer_menu"
-    android:layout_gravity="start"
-    android:fitsSystemWindows="true"/>
+            android:layout_height="match_parent"
+            android:id="@+id/nav_view"
+            android:background="@color/whiteColor"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/drawer_menu"
+            >
 
 
 
-</androidx.drawerlayout.widget.DrawerLayout>
+
+
+        </com.google.android.material.navigation.NavigationView>
+
+
+
+
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
