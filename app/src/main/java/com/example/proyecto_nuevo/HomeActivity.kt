@@ -10,9 +10,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_auth.*
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 enum class ProviderType{
 
@@ -20,8 +23,10 @@ enum class ProviderType{
     GOOGLE
 }
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    lateinit var homeFragment: HomeFragment
+    lateinit var LougoutFragment: LogoutFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +46,30 @@ class HomeActivity : AppCompatActivity() {
 
 
 
+        val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle (
+            this,
+            drawerLayout,
+            toolBar,
+            (R.string.open),
+            (R.string.close)
+
+        ){
 
 
+        }
 
+        drawerToggle.isDrawerIndicatorEnabled = true
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+
+        nav_view.setNavigationItemSelectedListener(this)
+
+        homeFragment = HomeFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame_layout, homeFragment)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            .commit()
 
     }
 
@@ -66,6 +92,14 @@ class HomeActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+    }
+
+    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+
+        when(menuItem.itemId){
+
+
+        }
     }
 
 
