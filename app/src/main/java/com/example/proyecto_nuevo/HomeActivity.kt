@@ -1,6 +1,7 @@
 package com.example.proyecto_nuevo
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
@@ -26,7 +28,7 @@ enum class ProviderType{
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var homeFragment: HomeFragment
-    lateinit var LougoutFragment: LogoutFragment
+    lateinit var logoutFragment: LogoutFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,7 +83,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
        // emailTextView.text=email
         //providerTextView.text=provider
 
-        logOutButton.setOnClickListener {
+     /*   logOutButton.setOnClickListener {
 
 
             val prefs = getSharedPreferences(getString(R.string.prefs_file),Context.MODE_PRIVATE).edit()
@@ -91,14 +93,85 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
         }
-
+*/
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 
         when(menuItem.itemId){
+        R.id.home ->{
+            homeFragment = HomeFragment()
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.frame_layout, homeFragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .commit()
 
+        }
+            R.id.home ->{
+                homeFragment = HomeFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, homeFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
 
+            }
+            R.id.work ->{
+                homeFragment = HomeFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, homeFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+
+            }
+            R.id.school ->{
+                homeFragment = HomeFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, homeFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+
+            }
+            R.id.timeline ->{
+                homeFragment = HomeFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, homeFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+
+            }
+            R.id.logout ->{
+                logoutFragment = LogoutFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, logoutFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+
+                val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+                prefs.clear()
+                prefs.apply()
+                FirebaseAuth.getInstance().signOut()
+                val authIntent = Intent(this,AuthActivity::class.java)
+                startActivity(authIntent)
+                Toast.makeText(applicationContext, "Cerraste sesión correctamente", Toast.LENGTH_LONG).show()
+
+            }
+        }
+
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+
+    }
+    override fun onBackPressed(){
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START)
+        }else{
+            super.onBackPressed()
         }
     }
 
