@@ -4,33 +4,40 @@
 
     <group android:checkableBehavior="single">
 
+
         <item
-            android:id="@+id/home"
-            android:title="Home"
-            android:icon="@drawable/ic_action_home"
+            android:id="@+id/tablero"
+            android:title="Tablero"
+            android:icon="@mipmap/tablero1"
             />
 
         <item
-            android:id="@+id/work"
-            android:title="Work"
-            android:icon="@mipmap/tareas"
+            android:id="@+id/tapen"
+            android:title="Tareas Pendientes"
+            android:icon="@mipmap/tp111"
             />
 
         <item
-            android:id="@+id/school"
-            android:title="School"
-            android:icon="@drawable/ic_action_home"
+            android:id="@+id/links"
+            android:title="Links"
+            android:icon="@mipmap/meets"
             />
 
         <item
-            android:id="@+id/timeline"
-            android:title="TimeLine"
-            android:icon="@mipmap/tareas"
+            android:id="@+id/apoyos"
+            android:title="Apoyos"
+            android:icon="@mipmap/apoyos"
+            />
+
+        <item
+            android:id="@+id/asesorias"
+            android:title="Asesorias"
+            android:icon="@mipmap/tutorias"
             />
         <item
-            android:id="@+id/finish"
-            android:title="Finish"
-            android:icon="@drawable/ic_action_home"
+            android:id="@+id/chat"
+            android:title="Chat"
+            android:icon="@drawable/message"
             />
 
 
@@ -40,9 +47,14 @@
     </group>
 
 
-    <item android:title="Controls">
+    <item android:title="Extras">
 
         <menu>
+            <item
+                android:id="@+id/ajustes"
+                android:title="Ajustes"
+                android:icon="@drawable/settings"
+                />
             <item
                 android:id="@+id/logout"
                 android:title="Salir"

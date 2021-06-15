@@ -28,6 +28,10 @@ enum class ProviderType{
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var homeFragment: HomeFragment
+    lateinit var tareasPendientes: TareasPendientes
+    lateinit var linksReuniones: Links_Reuniones
+    lateinit var apoyos: Apoyos
+    lateinit var asesorias: Asesorias
     lateinit var logoutFragment: LogoutFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,16 +103,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 
         when(menuItem.itemId){
-        R.id.home ->{
-            homeFragment = HomeFragment()
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.frame_layout, homeFragment)
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .commit()
 
-        }
-            R.id.home ->{
+            R.id.tablero ->{
                 homeFragment = HomeFragment()
                 supportFragmentManager
                     .beginTransaction()
@@ -117,7 +113,44 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .commit()
 
             }
-            R.id.work ->{
+
+            R.id.tapen ->{
+                tareasPendientes = TareasPendientes()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, tareasPendientes)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+
+            }
+            R.id.links ->{
+                linksReuniones = Links_Reuniones()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, linksReuniones)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+
+            }
+            R.id.apoyos ->{
+                apoyos = Apoyos()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, apoyos)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+
+            }
+            R.id.asesorias ->{
+                asesorias = Asesorias()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, asesorias)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+
+            }
+            R.id.chat ->{
                 homeFragment = HomeFragment()
                 supportFragmentManager
                     .beginTransaction()
@@ -126,16 +159,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .commit()
 
             }
-            R.id.school ->{
-                homeFragment = HomeFragment()
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, homeFragment)
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .commit()
-
-            }
-            R.id.timeline ->{
+            R.id.ajustes ->{
                 homeFragment = HomeFragment()
                 supportFragmentManager
                     .beginTransaction()
