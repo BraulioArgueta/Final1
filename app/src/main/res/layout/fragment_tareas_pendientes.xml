@@ -1,19 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TareasPendientes">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <EditText
+        android:id="@+id/addressTextView"
+        android:layout_width="292dp"
+        android:layout_height="41dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="79dp"
+        android:layout_marginRight="79dp"
+        android:layout_marginBottom="413dp"
+        android:gravity="center"
+        android:hint="Correo, calle, numero"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="59dp" />
+
+    <EditText
+        android:id="@+id/phonetextView"
+        android:layout_width="292dp"
+        android:layout_height="41dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginBottom="365dp"
+        android:layout_x="60dp"
+        android:layout_y="97dp"
+        android:hint="Telefono"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <Button
+        android:id="@+id/savebutton"
+        android:layout_width="202dp"
+        android:layout_height="43dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="121dp"
+        android:layout_marginRight="121dp"
+        android:layout_marginBottom="295dp"
+        android:layout_x="101dp"
+        android:layout_y="221dp"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/getbutton"
+        android:layout_width="187dp"
+        android:layout_height="43dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        android:layout_marginBottom="228dp"
+        android:layout_x="108dp"
+        android:layout_y="278dp"
+        android:text="Recuperar" />
+
+    <Button
+        android:id="@+id/deletebutton"
+        android:layout_width="185dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="130dp"
+        android:layout_marginRight="130dp"
+        android:layout_marginBottom="157dp"
+        android:layout_x="109dp"
+        android:layout_y="330dp"
+        android:text="Eliminar" />
+
     <TextView
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="Tareas Pendientes"
-        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="125dp" />
 
-        />
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="88dp" />
+
 
 </RelativeLayout>

@@ -15,9 +15,11 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_auth.*
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.fragment_tareas_pendientes.*
 
 enum class ProviderType{
 
@@ -33,10 +35,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var apoyos: Apoyos
     lateinit var asesorias: Asesorias
     lateinit var logoutFragment: LogoutFragment
+    private val db= FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
 
 
 
@@ -112,16 +116,34 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
 
+
             }
 
             R.id.tapen ->{
+
                 tareasPendientes = TareasPendientes()
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.frame_layout, tareasPendientes)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
+/*
+                savebutton.setOnClickListener{
+                    db.collection("Usuarios").document().set(hashMapOf(
+                        "Calle" to addressTextView.text.toString(),
+                        "Telefono" to phonetextView.text.toString()
 
+                    )
+                    )
+                    addressTextView.setText("gola")
+                }
+
+                getbutton.setOnClickListener {
+
+                }
+                deletebutton.setOnClickListener {
+
+                }*/
             }
             R.id.links ->{
                 linksReuniones = Links_Reuniones()
@@ -186,6 +208,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
         }
+
 
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
