@@ -1,5 +1,6 @@
 package com.example.proyecto_nuevo
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,6 +18,8 @@ import kotlinx.android.synthetic.main.fragment_tareas_pendientes.view.*
 
 
 class TareasPendientes : Fragment() {
+    var recyclerViewTareas: RecyclerView? = null
+    var mAdapter: TareasAdapter? = null
     private val db= FirebaseFirestore.getInstance()
 
     override fun onCreateView(
@@ -36,8 +40,11 @@ class TareasPendientes : Fragment() {
             ))
             val toast = Toast.makeText(context, "¡Los datos se han guardado correctamente!", Toast.LENGTH_SHORT).show()
         }
-        view.getbutton.setOnClickListener {
 
+
+        view.mostrartbutton.setOnClickListener {
+            val intent = Intent(activity, MostrarDatosActivity::class.java)
+            startActivity(intent)
 
             obtenerDatos()
             }
@@ -84,12 +91,8 @@ class TareasPendientes : Fragment() {
                 }
             } )
 
-       // db.collection("Tareas-Pendientes").document("eaCeBs2U6e61wbdOuPEQ").get().addOnSuccessListener{
-         //   text1.setText(it.get("Docente")as String?)
-           // text2.setText(it.get("Materia")as String?)
-      //  }
-
     }
+
 
 
 }
