@@ -32,10 +32,10 @@ class TareasPendientes : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_tareas_pendientes, container, false)
 
-        view.savebutton.setOnClickListener {
+        view.guardarButton.setOnClickListener {
             db.collection("Tareas-Pendientes").document().set(hashMapOf(
-                "Docente" to addressTextView.text.toString(),
-                "Materia" to phonetextView.text.toString()
+                "Docente" to edDocente.text.toString(),
+                "Materia" to edMateria.text.toString()
 
             ))
             val toast = Toast.makeText(context, "¡Los datos se han guardado correctamente!", Toast.LENGTH_SHORT).show()
@@ -49,11 +49,7 @@ class TareasPendientes : Fragment() {
             obtenerDatos()
             }
 
-        view.deletebutton.setOnClickListener {
 
-
-            db.collection("Usuarios").document("").delete()
-        }
 
         return view
     }

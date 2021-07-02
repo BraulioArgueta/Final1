@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/icono"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Nuevo">
-        <activity android:name=".MostrarDatosActivity"></activity>
+
+
+        <activity android:name=".EditarActivity" />
+        <activity android:name=".MostrarDatosActivity" />
         <activity android:name=".HomeActivity" />
         <activity
             android:name=".AuthActivity"

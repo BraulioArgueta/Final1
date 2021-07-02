@@ -32,7 +32,7 @@ public class MostrarDatosActivity extends AppCompatActivity {
         Query query = miFirestore.collection("Tareas-Pendientes");
         FirestoreRecyclerOptions<Tareas> firestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<Tareas>().setQuery(query, Tareas.class).build();
 
-        mAdapter= new TareasAdapter(firestoreRecyclerOptions);
+        mAdapter= new TareasAdapter(firestoreRecyclerOptions, this);
         mAdapter.notifyDataSetChanged();
         recyclerViewTareas.setAdapter(mAdapter);
     }

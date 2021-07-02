@@ -4,46 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TareasPendientes"
+    tools:context=".EditarActivity"
     android:orientation="vertical"
     android:padding="20dp">
 
     <!-- TODO: Update blank fragment layout -->
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        />
+
     <EditText
         android:id="@+id/edDocente"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Docente"
-        android:background="@drawable/style_bordes"
+        android:layout_height="wrap_content"
+        android:hint="Correo, calle, numero"
         android:textAlignment="center"
         android:gravity="center_horizontal" />
 
     <EditText
         android:id="@+id/edMateria"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Materia"
-        android:background="@drawable/style_bordes"
+        android:layout_height="wrap_content"
+        android:hint="Telefono"
         android:textAlignment="center"
         android:gravity="center_horizontal"/>
 
     <Button
-        android:id="@+id/guardarButton"
+        android:id="@+id/btnActualizar"
         android:layout_width="202dp"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:text="Guardar" />
+        android:text="Actualizar Datos" />
 
-    <Button
-        android:id="@+id/mostrartbutton"
-        android:layout_width="202dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:text="Mostrar" />
+
+
 
 
     <TextView

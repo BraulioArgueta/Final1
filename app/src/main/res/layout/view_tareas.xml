@@ -6,22 +6,47 @@
     android:layout_margin="20dp">
 
 
-    <TextView
-        android:id="@+id/textViewDocente"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Titulo"
-        android:background="@color/Color1"
-        android:textSize="20sp"
-        />
-    <TextView
-        android:id="@+id/textViewMateria"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contenido"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        />
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/textViewDocente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Titulo"
+                android:background="@color/Color1"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/textViewMateria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contenido"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnEditar"
+            android:text="Editar"
+            android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
