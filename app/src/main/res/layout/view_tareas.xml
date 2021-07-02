@@ -18,32 +18,68 @@
             android:layout_weight="1"
             android:orientation="vertical"
             >
-
+            <TextView
+                android:id="@+id/textViewEnunciado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enunciado"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
             <TextView
                 android:id="@+id/textViewDocente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Titulo"
-                android:background="@color/Color1"
+                android:text="Docente"
                 android:textSize="20sp"
                 />
             <TextView
                 android:id="@+id/textViewMateria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contenido"
+                android:text="Materia"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/textViewFechaEntrega"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha de Entrega"
                 android:layout_marginTop="20dp"
                 android:textSize="20sp"
                 />
 
         </LinearLayout>
-
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnEditar"
-            android:text="Editar"
-            android:layout_gravity="center_vertical"/>
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="50dp"/>
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Editar"
+                android:textSize="19sp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnEliminar"
+                android:text="Eliminar"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
 
         </LinearLayout>
 

@@ -11,10 +11,22 @@
     <!-- TODO: Update blank fragment layout -->
 
     <EditText
+        android:id="@+id/edEnunciado"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:ems="10"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:inputType="textMultiLine"
+        android:background="@drawable/style_bordes"
+        android:hint="Redacta tu tarea aquí"
+        />
+
+    <EditText
         android:id="@+id/edDocente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correo, calle, numero"
+        android:hint="Docente"
         android:textAlignment="center"
         android:gravity="center_horizontal" />
 
@@ -22,7 +34,18 @@
         android:id="@+id/edMateria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Telefono"
+        android:hint="Materia"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/edFecEn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="Fecha de Entrega(dd/mm/aaaa)"
+        android:background="@drawable/style_bordes"
         android:textAlignment="center"
         android:gravity="center_horizontal"/>
 
@@ -33,23 +56,6 @@
         android:layout_height="wrap_content"
         android:text="Actualizar Datos" />
 
-
-
-
-
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="125dp" />
-
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="88dp" />
 
 
 </LinearLayout>

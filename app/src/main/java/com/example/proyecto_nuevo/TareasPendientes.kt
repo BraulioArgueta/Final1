@@ -34,8 +34,10 @@ class TareasPendientes : Fragment() {
 
         view.guardarButton.setOnClickListener {
             db.collection("Tareas-Pendientes").document().set(hashMapOf(
+                "Enunciado" to edEnunciado.text.toString(),
                 "Docente" to edDocente.text.toString(),
-                "Materia" to edMateria.text.toString()
+                "Materia" to edMateria.text.toString(),
+                "Fecha_Entrega" to edFecEn.text.toString()
 
             ))
             val toast = Toast.makeText(context, "¡Los datos se han guardado correctamente!", Toast.LENGTH_SHORT).show()
@@ -46,7 +48,6 @@ class TareasPendientes : Fragment() {
             val intent = Intent(activity, MostrarDatosActivity::class.java)
             startActivity(intent)
 
-            obtenerDatos()
             }
 
 
@@ -61,33 +62,7 @@ class TareasPendientes : Fragment() {
 
     }
 
-    private fun obtenerDatos(){
 
-        db.collection("Tareas-Pendientes").document("eaCeBs2U6e61wbdOuPEQ").addSnapshotListener(
-            object : EventListener<DocumentSnapshot?> {
-                override fun onEvent(
-                    @Nullable documentSnapshot: DocumentSnapshot?,
-                    @Nullable e: FirebaseFirestoreException?
-                ) {
-                    if (documentSnapshot != null) {
-                        if (documentSnapshot.exists()){
-
-                            if (documentSnapshot.contains("Docente")){
-                                text1.setText(documentSnapshot.get("Docente")as String?)
-                            }else{
-                                text1.setText("Default")
-                            }
-                            if (documentSnapshot.contains("Materia")) {
-                                text2.setText(documentSnapshot.get("Materia") as String?)
-                            }else{
-                                text2.setText("Default")
-                            }
-                            }
-                    }
-                }
-            } )
-
-    }
 
 
 
