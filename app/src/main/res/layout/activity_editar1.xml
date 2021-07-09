@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Links_Reuniones"
+    tools:context=".Editar1"
     android:orientation="vertical"
     android:padding="20dp"
     android:background="@color/colorPrimary">
 
     <!-- TODO: Update blank fragment layout -->
-
 
     <View
         android:layout_width="wrap_content"
@@ -29,7 +28,7 @@
         android:gravity="center_horizontal"
 
         android:paddingRight="20dp"
-        android:background="@drawable/style_bordes"
+        android:background="@drawable/style3"
         android:drawableLeft="@drawable/tareaic"
         android:hint="Materia"
         android:layout_marginBottom="10dp"
@@ -40,7 +39,7 @@
         android:id="@+id/edDocente1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/style_bordes"
+        android:background="@drawable/style3"
         android:gravity="center_horizontal"
         android:drawableLeft="@drawable/docenteic"
         android:hint="Docente"
@@ -52,8 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:drawableLeft="@drawable/materiaic"
-        android:hint="Horario (00:00-00:00)"
-        android:background="@drawable/style_bordes"
+        android:hint="Horario (00:00)"
+        android:background="@drawable/style3"
         android:textAlignment="center"
         android:inputType="datetime"
         android:gravity="center_horizontal"
@@ -65,32 +64,23 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:ems="10"
-
         android:drawableLeft="@drawable/fechaic"
         android:hint="Link de la clase"
-        android:background="@drawable/style_bordes"
+        android:background="@drawable/style3"
         android:textAlignment="center"
         android:gravity="center_horizontal"
         android:layout_marginBottom="20dp"/>
 
-    <Button
-        android:id="@+id/guardarButton1"
-        android:layout_width="202dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/style2"
-        android:text="Guardar"
-        app:backgroundTint="@color/purple_200"
-        android:layout_marginBottom="10dp"/>
 
     <Button
-        android:id="@+id/mostrartbutton1"
+        android:id="@+id/btnActualizar1"
         android:layout_width="202dp"
-        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/purple_200"
         android:background="@drawable/style2"
-        android:text="Mostrar"
-        app:backgroundTint="@color/purple_200" />
+        android:text="Actualizar Datos" />
+
 
 
 </LinearLayout>

@@ -14,7 +14,9 @@
 
 
         <activity android:name=".EditarActivity" />
+        <activity android:name=".Editar1" />
         <activity android:name=".MostrarDatosActivity" />
+        <activity android:name=".MostrarDatosActivity1" />
         <activity android:name=".HomeActivity" />
         <activity
             android:name=".AuthActivity"

@@ -37,11 +37,10 @@ public class TareasAdapter extends FirestoreRecyclerAdapter<Tareas, TareasAdapte
 
         DocumentSnapshot tareasDocument= getSnapshots().getSnapshot(holder.getAdapterPosition());
         final String id= tareasDocument.getId();
-        System.out.println(id);
         holder.textViewEnunciado.setText("La tarea consiste en: "+tareas.getEnunciado());
-    holder.textViewDocente.setText("Docente: "+tareas.getDocente());
-    holder.textViewMateria.setText("Materia: "+tareas.getMateria());
-    holder.textViewFechaEntrega.setText("Limite hasta el dia: "+tareas.getFecha_Entrega());
+        holder.textViewDocente.setText("Docente: "+tareas.getDocente());
+        holder.textViewMateria.setText("Materia: "+tareas.getMateria());
+        holder.textViewFechaEntrega.setText("Limite hasta el dia: "+tareas.getFecha_Entrega());
 
     holder.buttonEditar.setOnClickListener(new View.OnClickListener() {
         @Override

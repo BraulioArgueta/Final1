@@ -21,10 +21,10 @@
             android:orientation="vertical"
             >
             <TextView
-                android:id="@+id/textViewEnunciado"
+                android:id="@+id/textViewMateria1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enunciado"
+                android:text="Materia: "
                 android:layout_marginTop="20dp"
                 android:textSize="20sp"
                 />
@@ -32,25 +32,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
             <TextView
-                android:id="@+id/textViewDocente"
+                android:id="@+id/textViewDocente1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Docente"
                 android:textSize="20sp"
                 />
             <TextView
-                android:id="@+id/textViewMateria"
+                android:id="@+id/textViewHorario1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Materia"
+                android:text="Horario"
                 android:layout_marginTop="20dp"
                 android:textSize="20sp"
                 />
             <TextView
-                android:id="@+id/textViewFechaEntrega"
+                android:id="@+id/textViewLink1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fecha de Entrega"
+                android:text="Link:"
+                android:autoLink="web"
                 android:layout_marginTop="20dp"
                 android:textSize="20sp"
                 />
@@ -68,7 +69,7 @@
                 android:layout_height="50dp"/>
 
             <Button
-                android:id="@+id/btnEditar"
+                android:id="@+id/btnEditar1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -81,7 +82,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnEliminar"
+                android:id="@+id/btnEliminar1"
                 android:background="@drawable/style2"
                 app:backgroundTint="@color/purple_200"
                 android:text="Eliminar"
@@ -90,7 +91,7 @@
         </LinearLayout>
 
 
-        </LinearLayout>
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"

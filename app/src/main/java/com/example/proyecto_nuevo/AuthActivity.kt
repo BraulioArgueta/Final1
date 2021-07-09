@@ -59,9 +59,9 @@ showHome(email, ProviderType.valueOf(provider))
     }
 
     public fun setup(){
-        title="Autenticación"
+        title="TeacHome"
 
-        signUpButton.setOnClickListener {
+      /*  signUpButton.setOnClickListener {
             if(emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()){
 
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailEditText.text.toString(),
@@ -76,8 +76,8 @@ showHome(email, ProviderType.valueOf(provider))
                 }
             }
 
-        }
-        logInButton.setOnClickListener {
+        }*/
+        /*logInButton.setOnClickListener {
             if(emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()){
 
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(emailEditText.text.toString(),
@@ -93,7 +93,7 @@ showHome(email, ProviderType.valueOf(provider))
             }
 
         }
-
+*/
         googleButton.setOnClickListener {
 
             val googleConf =  GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
