@@ -9,11 +9,6 @@
 
     <group android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/tablero"
-            android:title="Tablero"
-            android:icon="@mipmap/tablero1"
-            />
 
         <item
             android:id="@+id/tapen"
@@ -27,11 +22,7 @@
             android:icon="@mipmap/meets"
             />
 
-        <item
-            android:id="@+id/apoyos"
-            android:title="Apoyos"
-            android:icon="@mipmap/apoyos"
-            />
+      
 
 
     </group>
@@ -40,11 +31,6 @@
     <item android:title="Extras">
 
         <menu>
-            <item
-                android:id="@+id/ajustes"
-                android:title="Ajustes"
-                android:icon="@drawable/settings"
-                />
             <item
                 android:id="@+id/logout"
                 android:title="Cerrar Sesión"

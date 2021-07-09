@@ -21,7 +21,6 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_auth.*
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_tareas_pendientes.*
 import kotlin.io.*
 
@@ -34,37 +33,13 @@ enum class ProviderType{
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    lateinit var homeFragment: HomeFragment
+
     lateinit var tareasPendientes: TareasPendientes
     lateinit var linksReuniones: Links_Reuniones
-    lateinit var apoyos: Apoyos
     lateinit var logoutFragment: LogoutFragment
     private val db= FirebaseFirestore.getInstance()
 
-    private fun getUserProfile() {
-        // [START get_user_profile]
-        val user = Firebase.auth.currentUser
-        user?.let {
-            // Name, email address, and profile photo Url
-            val name = user.displayName
-            val email = user.email
-            val photoUrl = user.photoUrl
 
-            // Check if user's email is verified
-            val emailVerified = user.isEmailVerified
-
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getToken() instead.
-            val uid = user.uid
-
-            Toast.makeText(applicationContext, name, Toast.LENGTH_LONG).show()
-            text11.setText(name)
-        }
-
-
-        // [END get_user_profile]
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,13 +78,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        homeFragment = HomeFragment()
+        tareasPendientes = TareasPendientes()
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.frame_layout, homeFragment)
+            .replace(R.id.frame_layout, tareasPendientes)
             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
             .commit()
-
     }
 
 
@@ -137,17 +111,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         when(menuItem.itemId){
 
-            R.id.tablero ->{
-                homeFragment = HomeFragment()
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, homeFragment)
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .commit()
-                    getUserProfile()
-
-            }
-
             R.id.tapen ->{
 
                 tareasPendientes = TareasPendientes()
@@ -167,25 +130,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .commit()
 
             }
-            R.id.apoyos ->{
-                apoyos = Apoyos()
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, apoyos)
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .commit()
 
-            }
-
-            R.id.ajustes ->{
-                homeFragment = HomeFragment()
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, homeFragment)
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .commit()
-
-            }
             R.id.logout ->{
                 logoutFragment = LogoutFragment()
                 supportFragmentManager

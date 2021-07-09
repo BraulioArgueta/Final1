@@ -29,6 +29,8 @@
             app:menu="@menu/drawer_menu"
             app:headerLayout="@layout/header"
             android:layout_gravity="start"
+
+
             >
 
 
@@ -36,11 +38,6 @@
 
 
         </com.google.android.material.navigation.NavigationView>
-
-
-
-
-
 
     </androidx.drawerlayout.widget.DrawerLayout>
 

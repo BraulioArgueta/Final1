@@ -30,7 +30,7 @@
 
         android:paddingRight="20dp"
         android:background="@drawable/style_bordes"
-        android:drawableLeft="@drawable/tareaic"
+        android:drawableLeft="@drawable/materiaic"
         android:hint="Materia"
         android:layout_marginBottom="10dp"
         />
@@ -51,7 +51,7 @@
         android:id="@+id/edHorario1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:drawableLeft="@drawable/materiaic"
+        android:drawableLeft="@drawable/horarioic"
         android:hint="Horario (00:00-00:00)"
         android:background="@drawable/style_bordes"
         android:textAlignment="center"
@@ -66,7 +66,7 @@
         android:layout_height="50dp"
         android:ems="10"
 
-        android:drawableLeft="@drawable/fechaic"
+        android:drawableLeft="@drawable/linkic"
         android:hint="Link de la clase"
         android:background="@drawable/style_bordes"
         android:textAlignment="center"
